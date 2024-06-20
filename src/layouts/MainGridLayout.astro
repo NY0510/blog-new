@@ -39,6 +39,18 @@ const enableBanner = siteConfig.banner.enable
     </div>
 
     <div id="footer" class="grid-rows-3 col-span-2 mt-4 onload-animation">
+        <script>
+            if (window.matchMedia("( min-width: 1024px )").matches == true) {
+                document.write(
+                    '<div class="ad pc"><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8867843198260985" data-ad-slot="4965624947"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});<\/script></div>'
+                );
+            }
+            if (window.matchMedia("( max-width: 768px )").matches == true) {
+                document.write(
+                    '<div class="ad mobile"><ins class="adsbygoogle" style="display:inline-block;width:350px;height:150px" data-ad-client="ca-pub-8867843198260985" data-ad-slot="7650439822"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});<\/script></div>'
+                );
+            }
+        </script>
         <Footer></Footer>
     </div>
     <BackToTop></BackToTop>
