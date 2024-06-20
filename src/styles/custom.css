@@ -30,3 +30,13 @@ code {
 .ad:first-of-type {
 	margin-top: 2rem;
 }
+
+.giscus,
+.giscus-frame {
+	width: 100%;
+	border: none;
+}
+
+.giscus {
+	margin-top: 2rem;
+}
