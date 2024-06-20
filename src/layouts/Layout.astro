@@ -13,6 +13,8 @@ import {defaultFavicons} from "../constants/icon";
 import {LIGHT_MODE, DARK_MODE, AUTO_MODE, DEFAULT_THEME} from "../constants/constants";
 import {url} from "../utils/url-utils";
 
+import CustomHeader from "@components/CustomHeader.astro";
+
 interface Props {
 	title: string;
 	banner: string;
@@ -128,6 +130,7 @@ const siteLang = siteConfig.lang.replace('_', '-')
 
 		<style define:vars={{ configHue }}></style>  <!-- defines global css variables. This will be applied to <html> <body> and some other elements idk why -->
 
+		<CustomHeader />
 	</head>
 	<body class=" min-h-screen transition " class:list={[{"is-home": isHomePage, "enable-banner": enableBanner}]}>
 		<ConfigCarrier></ConfigCarrier>

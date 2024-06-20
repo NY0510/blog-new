@@ -9,7 +9,7 @@ export async function GET(context: any) {
   const blog = await getCollection('posts');
   return rss({
     title: siteConfig.title,
-    description: siteConfig.subtitle || 'No description',
+    description: siteConfig.subtitle || '',
     site: context.site,
     items: blog.map((post) => ({
         title: post.data.title,
