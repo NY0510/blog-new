@@ -58,13 +58,7 @@ export default defineConfig({
       Image: false,
     }),
     svelte(),
-    sitemap({
-      serialize(item) { 
-        if (/^\/archive/.test(item.url)) {
-          return undefined;
-        }
-      },
-    })
+    sitemap()
   ],
   markdown: {
     remarkPlugins: [remarkMath, remarkReadingTime, remarkDirective, parseDirectiveNode],
