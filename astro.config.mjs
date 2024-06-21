@@ -58,11 +58,11 @@ export default defineConfig({
       Image: false,
     }),
     svelte(),
-    sitemap({
-      filter: (page) => {
-        return !(page && page.path && page.path.includes("/archive/") && page.path !== "/archive/");
-      },
-    }),
+  sitemap({
+    filter: (page) => {
+      return !page.url.startsWith('/archive');
+    },
+  })
   ],
   markdown: {
     remarkPlugins: [remarkMath, remarkReadingTime, remarkDirective, parseDirectiveNode],
