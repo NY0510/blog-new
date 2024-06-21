@@ -46,12 +46,6 @@ const jsonLd = {
 ---
 <MainGridLayout banner={entry.data.image} title={entry.data.title} description={entry.data.description}>
     <script slot="head" type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>
-    
-    <script src="https://giscus.app/client.js" data-repo="NY0510/Blog-Comment" data-repo-id="R_kgDOGQ6_CA"
-        data-category="Announcements" data-category-id="DIC_kwDOGQ6_CM4B_i9q" data-mapping="pathname" data-strict="1"
-        data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="transparent_dark"
-        data-lang="ko" crossorigin="anonymous" async>
-    </script>
 
     <div class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative mb-4">
         <div id="post-container" class:list={["card-base z-10 px-6 md:px-9 pt-6 pb-4 relative w-full ",
@@ -104,27 +98,27 @@ const jsonLd = {
                 <ImageWrapper src={entry.data.image} basePath={path.join("content/posts/", getDir(entry.id))} class="mb-8 rounded-xl banner-container onload-animation"/>
             }
 
-
             <Markdown class="mb-6 markdown-content onload-animation">
                 <Content />
             </Markdown>
 
-            {licenseConfig.enable && <License title={entry.data.title} slug={entry.slug} pubDate={entry.data.published} class="mb-6 rounded-xl license-container onload-animation"></License>}
-
-            <script>
-                if (window.matchMedia("( min-width: 1024px )").matches == true) {
-                    document.write(
-                        '<div class="ad pc"><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8867843198260985" data-ad-slot="4965624947"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});<\/script></div>'
-                    );
-                }
-                if (window.matchMedia("( max-width: 768px )").matches == true) {
-                    document.write(
-                        '<div class="ad mobile"><ins class="adsbygoogle" style="display:inline-block;width:350px;height:150px" data-ad-client="ca-pub-8867843198260985" data-ad-slot="7650439822"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});<\/script></div>'
-                    );
-                }
+            <script src="https://giscus.app/client.js"
+                data-repo="NY0510/Blog-Comment"
+                data-repo-id="R_kgDOGQ6_CA"
+                data-category="Announcements"
+                data-category-id="DIC_kwDOGQ6_CM4B_i9q"
+                data-mapping="pathname"
+                data-strict="1"
+                data-reactions-enabled="1"
+                data-emit-metadata="0"
+                data-input-position="top"
+                data-lang="ko"
+                data-theme="preferred_color_scheme"
+                crossorigin="anonymous"
+                async>
             </script>
 
-            <section class="giscus"></section>
+            {licenseConfig.enable && <License title={entry.data.title} slug={entry.slug} pubDate={entry.data.published} class="mb-6 rounded-xl license-container onload-animation"></License>}
         </div>
     </div>
 
