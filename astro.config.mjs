@@ -59,9 +59,10 @@ export default defineConfig({
     }),
     svelte(),
     sitemap({
-      filter: (page) => {
-        // page와 page.url이 존재하는지 확인
-        return page && page.url && !page.url.startsWith('/archive');
+      serialize(item) { 
+        if (/^\/archive/.test(item.url)) {
+          return undefined;
+        }
       },
     })
   ],
