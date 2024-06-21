@@ -58,11 +58,12 @@ export default defineConfig({
       Image: false,
     }),
     svelte(),
-  sitemap({
-    filter: (page) => {
-      return !page.url.startsWith('/archive');
-    },
-  })
+    sitemap({
+      filter: (page) => {
+        // page와 page.url이 존재하는지 확인
+        return page && page.url && !page.url.startsWith('/archive');
+      },
+    })
   ],
   markdown: {
     remarkPlugins: [remarkMath, remarkReadingTime, remarkDirective, parseDirectiveNode],
