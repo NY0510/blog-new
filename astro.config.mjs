@@ -60,7 +60,7 @@ export default defineConfig({
     svelte(),
     sitemap({
       filter: (page) => {
-        return page.path !== "/archive"
+        return (page.path.includes("/archive/") && page.path !== "/archive/")
       },
     }),
   ],
